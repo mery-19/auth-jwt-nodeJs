@@ -10,9 +10,11 @@ mongoose.connect( process.env.DB_CONNECT
 ()=>console.log("connect successfully to db"));
 
 const authRouter = require('./routes/auth');
+const usersRouter = require('./routes/users');
 
 //app midlware
 app.use('/api/user',authRouter);
+app.use('/api/users',usersRouter);
 
 app.listen(3000, ()=>{
 console.log("server runing on http://localhost:3000/");
